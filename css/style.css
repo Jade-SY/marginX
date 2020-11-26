@@ -6,8 +6,8 @@
 html{scroll-behavior: smooth;} 
 body{
   cursor: none;
-   background:#f6f4f0; color: #333; font-family: 'Noto Sans KR', Arial, Georgia,  "맑은 고딕", "Malgun Gothic", sans-serif;}
-
+  background:#f6f4f0; color: #333; font-family: 'Noto Sans KR', Arial, Georgia,  "맑은 고딕", "Malgun Gothic", sans-serif;
+}
 @keyframes fadeIn {
   0% { opacity: 0; }
   100% { opacity: 1; }
@@ -29,6 +29,7 @@ body{
 }
 .cursor.into{ width: 100px; height: 100px; border: 1px solid rgba(255,255,255,0.7);
   background-color: rgba(255,255,255,0.3)}
+@media (max-width: 1272px) { *{cursor: auto;} .cursor{display: none;} }
 
 header { position: fixed; z-index: 999; background-color: transparent; width:100%; height: 500px; transition: height 0.5s;}
 header.sm { height: 70px; border-bottom: 1px solid rgba(0,0,0,0.1);} 
@@ -40,6 +41,33 @@ header .gnb-wrap{ margin: 19px 100px; font-size: 0;}
 .gnb-wrap .gnb-item{ display: inline-block; color: #f09e32; font-size: 25px; font-weight: 700;}
 .header-left-menu .gnb-wrap .gnb-item{ margin-right:100px;}
 .header-right-menu .gnb-wrap .gnb-item{ margin-left:100px;}
+
+.gnb-M-btn{ width: 38px; height: 26px; position: relative; float: right; margin: 18px 18px 0 0;}
+.gnb-M-btn .gnb-M-btn-line{ position: absolute; width: 100%; border: 2px solid #333333; transition: all .3s;}
+.gnb-M-btn-line.line1{ top:0;}
+.gnb-M-btn-line.line2{ width:80%; top:12px; right: 0;}
+.gnb-M-btn-line.line3{ top:24px;}
+
+.gnb-M-btn.hover .gnb-M-btn-line{ border-color: #f09e32;}
+.gnb-M-btn.hover .gnb-M-btn-line.line1,
+.gnb-M-btn.hover .gnb-M-btn-line.line3{ width:80%; right: 0;}
+.gnb-M-btn.hover .gnb-M-btn-line.line2{ width: 100%;}
+
+.gnb-M-btn.click .gnb-M-btn-line{ border-color: #f09e32;}
+.gnb-M-btn.click .gnb-M-btn-line.line1{ top: 12px; transform: rotate(45deg);}
+.gnb-M-btn.click .gnb-M-btn-line.line2{ width: 100%; opacity: 0;}
+.gnb-M-btn.click .gnb-M-btn-line.line3{ top: 12px; transform: rotate(-45deg);}
+
+.gnb-M-container{position: fixed; top:0; left: 0; right: 0; background: rgba(51,51,51,0.98);}
+.gnb-M-container .gnb-M-wrap{ position: absolute; top:50%; font-size: 24px; font-weight: bold; color: #fafafa;}
+@media (min-width: 1271px) {
+  header .gnb-M{ display: none;}
+}
+@media (max-width: 1272px) {
+  header .gnb-wrap{ display: none;}
+  header .gnb-M{ display: block;} 
+}
+
 
 section { position: relative; max-width: 1921px;
   margin: auto;
@@ -103,6 +131,3 @@ section { position: relative; max-width: 1921px;
 
 footer{ width: 100%; height: 100px; border-top: 1px solid #333333;}
 
-@media (max-width: 1272px) {
-  header .gnb-wrap{ display: none;}
-}
