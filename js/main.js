@@ -1,8 +1,9 @@
 var gnb_M_Btn = document.querySelector(".gnb-M-btn")
-var container = document.querySelector(".gnb-M-wrap")
+var gnb_M_container = document.querySelector(".gnb-M-container")
+var gnb_M_item = document.querySelectorAll(".gnb-M-item")
+
 
 gnb_M_Btn.addEventListener('mouseenter', function(){
-  console.log(gnb_M_Btn.children)
   gnb_M_Btn.classList.add('hover')
 })
 gnb_M_Btn.addEventListener('mouseleave', function (){
@@ -10,11 +11,14 @@ gnb_M_Btn.addEventListener('mouseleave', function (){
 })
 gnb_M_Btn.addEventListener('click', function(){
   if(gnb_M_Btn.classList.contains('click')){
-    gnb_M_Btn.classList.remove('click')
-    gnb_M_wrap.style = 'bottom : auto;'
-
+    gnb_M_Btn.classList.remove('click', 'hover') 
+    gnb_M_container.style = 'display : none;' 
   }else{
     gnb_M_Btn.classList.add('click')
-    gnb_M_wrap.style = 'bottom : 0;' 
+    gnb_M_container.style = 'display: block;'
   }
 })
+gnb_M_item.forEach( item => item.addEventListener('click', function(){
+  gnb_M_container.style = 'display : none;' 
+}))
+

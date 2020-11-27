@@ -16,7 +16,7 @@
       property="og:description"
       content="웹 퍼블리셔&amp;프론트엔드 박소연 포트폴리오 웹사이트입니다."
     />
-    <meta property="og:image" content="images/decr_img.jpg" />
+    <meta property="og:image" content="images/og_img.jpg" />
     <title>좌우간격 10cm | 박소연 포트폴리오</title>
     <script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
@@ -31,8 +31,8 @@
       <header class="header">
         <div class="header-left-menu">
           <ul class="gnb-wrap">
-            <li class="gnb-item"><a href="#about"></a>ABOUT</a></li>
-            <li class="gnb-item"><a href="#skill"></a>SKILL</a></li>
+            <li class="gnb-item"><a href="#about">ABOUT</a></li>
+            <li class="gnb-item"><a href="#skill">SKILL</a></li>
           </ul>
         </div>
         <h1 class="main-logo">
@@ -42,12 +42,12 @@
         </h1>
         <div class="header-right-menu">
           <ul class="gnb-wrap">
-            <li class="gnb-item"><a href="#portfolio"></a>PORTFOLIO</a></li>
-            <li class="gnb-item"><a href="#contact"></a>CONTACT</a></li>
+            <li class="gnb-item"><a href="#portfolio">PORTFOLIO</a></li>
+            <li class="gnb-item"><a href="#contact">CONTACT</a></li>
           </ul>
         </div>
-        <div class="mailto-M"><a target="_blank section-title" href="https://mail.google.com/mail/?view=cm&fs=1&to=jadesy90@gmail.com" title="클릭하시면 지메일로 연결됩니다. jadesy90@gmail.com"></a></div>
         <div class="gnb-M">
+          <div class="mailto-M"><a target="_blank section-title" href="https://mail.google.com/mail/?view=cm&fs=1&to=jadesy90@gmail.com" title="클릭하시면 지메일로 연결됩니다.">jadesy90@gmail.com</a></div>
           <div class="gnb-M-btn">
             <div class="gnb-M-btn-line line1"></div>
             <div class="gnb-M-btn-line line2"></div>
@@ -55,29 +55,15 @@
           </div>
           <div class="gnb-M-container">
             <ul class="gnb-M-wrap">
-              <li class="gnb-M-item"><a href="#about"></a>ABOUT</a></li>
-              <li class="gnb-M-item"><a href="#skill"></a>SKILL</a></li>
-              <li class="gnb-M-item"><a href="#portfolio"></a>PORTFOLIO</a></li>
-              <li class="gnb-M-item"><a href="#contact"></a>CONTACT</a></li>
+              <li class="gnb-M-item"><a href="#about">ABOUT</a></li>
+              <li class="gnb-M-item"><a href="#skill">SKILL</a></li>
+              <li class="gnb-M-item"><a href="#portfolio">PORTFOLIO</a></li>
+              <li class="gnb-M-item"><a href="#contact">CONTACT</a></li>
             </ul>
           </div>
         </div>
       </header>
       <section id="hero" class="section1">
-        <!-- <svg
-          class="hero-circle circle-big"
-          viewBox="0 0 360 360"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <circle cx="180" cy="180" r="180" fill="#f8b039" />
-        </svg>
-        <svg
-          class="hero-circle circle-sm"
-          viewBox="0 0 200 200"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <circle cx="100" cy="100" r="100" fill="#459485" />
-        </svg> -->
         <div class="hero-circle circle-big"></div>
         <div class="hero-circle circle-sm"></div>
         <p class="hero-text">
@@ -98,24 +84,31 @@
             멈출 수 없고, 멈추고 싶지도 않습니다. 어제보다 더 많이 아는 내일을
             위해 오늘도 공부 중!
           </p>
-        </div>
-
+          <div class="mobile-circle"></div>
+        </div> 
         <div class="my-photo-wrap">
           <img class="my-photo" src="https://i.pinimg.com/originals/29/97/8d/29978d58c017b52dd19a3f2e2cb9f9fa.jpg" alt="" />
         </div>
       </section>
       <section id="skill" class="section3">
         <div class="my-skill skill-css">
-          <div class="css-text skill-title">CSS</div>
+          <div class="css-text skill-text"><p class="skill-title">CSS</p>
+            <p class="skill-desc">css</p>
+          </div>
         </div>
         <div class="my-skill skill-html">
-            <div class="html-text skill-title">HTML</div>
+          <div class="html-text skill-text"><p class="skill-title">HTML</p>
+            <p class="skill-desc">웹 표준과 크로스 브라우징을 준수하여 보다 탄탄한 마크업을 지향합니다</p></div>
         </div>
         <div class="my-skill skill-vue">
-          <div class="vue-text skill-title">Vue.js</div>
+          <div class="vue-text skill-text"><p class="skill-title">Vue.js</p>
+            <p class="skill-desc">Component, Router등 Vue의 주요 기능을 이해하고 사용할 수 있습니다.</p>
+          </div>
       </div>
         <div class="my-skill skill-js">
-            <div class="js-text skill-title">JS</div>
+            <div class="js-text skill-text"><p class="skill-title">JS</p>
+              <p class="skill-desc">자바스크립트의 기본 문법을 이해하고 라이브러리 및 유용한 플러그인을 적용할 수 있습니다.</p>
+            </div>
         </div>      
       </section>
       <section id="portfolio" class="section4">
@@ -136,7 +129,9 @@
         <p class="mail-address">
           <a target="_blank section-title" href="https://mail.google.com/mail/?view=cm&fs=1&to=jadesy90@gmail.com" title="클릭하시면 지메일로 연결됩니다."> jadesy90@gmail.com </a></p>
       </section>
-      <footer></footer>
+      <footer>
+        <p class="made-by">Made by Soyeon Park</p>
+      </footer>
     </div>
     <script src="js/main.js"></script>
     <script src="js/mouseEffect.js"></script>
