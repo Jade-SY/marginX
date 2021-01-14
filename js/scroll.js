@@ -42,7 +42,7 @@
 
         if (scrollVal > 3236 && scrollVal < 4540) {
             skillCss.style.top = -1070 + Math.floor(scrollVal * 0.4) + 'px'
-            skillHtml.style.bottom = -1590 + Math.floor(scrollVal * 0.5) + 'px'
+            skillHtml.style.bottom = -1290 + Math.floor(scrollVal * 0.5) + 'px'
             skillJs.style.top = Math.floor(scrollVal * 0.06) + 'px'
             skillVue.style.top = Math.floor(scrollVal * 0.13) + 'px'
         }
