@@ -1,24 +1,19 @@
-var gnb_M_Btn = document.querySelector(".gnb-M-btn")
-var gnb_M_container = document.querySelector(".gnb-M-container")
-var gnb_M_item = document.querySelectorAll(".gnb-M-item")
+var gnb_Btn = document.querySelector(".gnb-btn")
+var gnb_container = document.querySelector(".gnb-container")
+var gnb_item = document.querySelectorAll(".gnb-item")
 
 
-gnb_M_Btn.addEventListener('mouseenter', function(){
-  gnb_M_Btn.classList.add('hover')
-})
-gnb_M_Btn.addEventListener('mouseleave', function (){
-  gnb_M_Btn.classList.remove('hover')
-})
-gnb_M_Btn.addEventListener('click', function(){
-  if(gnb_M_Btn.classList.contains('click')){
-    gnb_M_Btn.classList.remove('click', 'hover') 
-    gnb_M_container.style = 'display : none;' 
+gnb_Btn.addEventListener('click', function(){
+  if(gnb_Btn.classList.contains('on')){
+    gnb_Btn.classList.remove('on') 
+    gnb_container.style = 'visibility: hidden;' 
   }else{
-    gnb_M_Btn.classList.add('click')
-    gnb_M_container.style = 'display: block;'
+    gnb_Btn.classList.add('on')
+    gnb_container.style = 'visibility: visible; opacity: 1;'
   }
 })
-gnb_M_item.forEach( item => item.addEventListener('click', function(){
-  gnb_M_container.style = 'display : none;' 
+gnb_item.forEach( item => item.addEventListener('click', function(){
+  gnb_Btn.classList.remove('on') 
+  gnb_container.style = 'visibility: hidden;' 
 }))
 

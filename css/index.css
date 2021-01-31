@@ -1,0 +1,90 @@
+@charset "utf-8";
+@import 'reset.css';
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
+
+html, body{scroll-behavior: smooth; width: 100%; background:#f6f4f0; color: #333; font-family: 'Noto Sans KR', Arial, Georgia,  "맑은 고딕", "Malgun Gothic", sans-serif;}
+
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+@keyframes fadeOut {
+  0% { opacity: 1; }
+  100% { opacity: 0; }
+}
+@keyframes circleRound{
+  20%{ transform: translate(10px, 10px); }
+  45%{ transform: translate(0px, 20px); }
+  75%{ transform: translate(-10px, 10px); }
+  100%{ transform: translate(0px, 0px); }
+}
+
+header { position: fixed; z-index: 999; background-color: transparent; width:100%; height: 500px; transition: height 0.5s;}
+header.sm { height: 70px; border-bottom: 1px solid rgba(0,0,0,0.1);}
+header .main-logo{ max-width:800px; width: 80%; position: absolute; left: 50%; top: 180px; transform: translateX(-50%); transition: all 0.5s;}
+header .main-logo.sm{ width:150px; position: absolute; top: 5px; left: 50%; transform: translateX(-50%);}
+
+.gnb{display: flex; justify-content: space-between; align-items: center; width: 100%; height: 70px; padding: 0 16px;}
+.gnb .mailto{width: 40px; transition: .5s;}
+.gnb .mailto:hover .email-icon{fill: #f8b039;}
+
+.gnb-btn{ cursor: pointer; width: 38px; height: 26px; position: relative; z-index:999;}
+.gnb-btn .gnb-btn-line{ position: absolute; width: 100%; border: 2px solid #333333; transition: all .3s;}
+.gnb-btn-line.line1{ top:0; right: 0;}
+.gnb-btn-line.line2{ width:80%; top:12px; right: 0;}
+.gnb-btn-line.line3{ top:24px; right: 0;}
+.gnb-btn:hover .gnb-btn-line{ border-color: #f09e32;}
+.gnb-btn:hover .gnb-btn-line.line1,
+.gnb-btn:hover .gnb-btn-line.line3{ width:80%; right: 0;}
+.gnb-btn:hover .gnb-btn-line.line2{ width: 100%;}
+.gnb-btn.on .gnb-btn-line{ border-color: #f09e32;}
+.gnb-btn.on .gnb-btn-line.line1{ top: 12px; transform: rotate(45deg);}
+.gnb-btn.on .gnb-btn-line.line2{ width: 100%; opacity: 0;}
+.gnb-btn.on .gnb-btn-line.line3{ top: 12px; transform: rotate(-45deg);}
+.gnb-container{visibility: hidden; position: fixed; top:0; left: 0; right: 0; bottom: 0;background: #333; opacity: 0; transition: .5s;}
+.gnb-container .gnb-wrap{ position: absolute; top:50%; left: 50%; transform:translate(-50%, -50%); font-size: 24px; font-weight: bold; color: #fafafa;}
+.gnb-wrap .gnb-item{ margin-top: 100px; color: #f8b039;}
+.gnb-wrap .gnb-item:first-child{ margin-top: 0;}
+
+/*section 공통사항*/
+section { position: relative; width:100%; max-width: 1920px; margin: auto; min-height: 864px; padding-top: 100px;}
+.title{font-size: 5.5vw; font-weight: 900; letter-spacing: -1px; word-spacing: -6px; opacity: 0; transition: opacity 1s;} 
+
+/*section 개별 스타일*/
+#hero{display: flex; justify-content: center; height: 1240px; margin-bottom: 100px;}
+#hero .hero-circle{ position: absolute;}
+#hero .hero-circle.circle-big{ width: 360px; height: 360px; border-radius: 50%;
+  top: 25%; left:20%;  background-color: #f8b039; animation: circleRound 3.5s linear infinite;}
+#hero .hero-circle.circle-sm{ width:200px; height: 200px; border-radius: 50%;
+  top: 7%; right: 25%; background-color: #459485; animation: circleRound 3.3s linear reverse infinite;}
+#hero .hero-text{ position: absolute; top: 41%; left: 18.5%; font-size: 23px; font-weight: bold;}
+#hero .greeting-text{position: absolute; bottom: 0;}
+
+#about{display: flex; justify-content: center; align-items: center; padding: 0 20px;}
+#about .about-text-box{position: relative; max-width: 900px; transform: translateY(100px); line-height: 1.8; opacity: 0; transition: all 1s; }
+.about-text-box .about-description{ margin-top: 10px; color: #534b4b; word-break: break-all; }
+#about .about-bg-circle-sm{z-index: -1; position: absolute; top: -50px; left: -30px; width: 100px; height: 100px; border-radius: 50%; background-color: #ec92a6; animation: circleRound 3.3s linear reverse infinite;} 
+#about .about-bg-circle{z-index: -1; position: absolute; right: -50px; bottom: -50px; width: 180px; height: 180px; border-radius: 50%; background-color: #459485; animation: circleRound 3.8s linear infinite;}
+
+#portfolio{display: flex; flex-direction: column; justify-content: center; text-align: center;}
+#portfolio .portfolio-wrap{display: flex; justify-content: center; margin-top: 32px;}
+.portfolio-wrap .portfolio-card{position: relative; width: 240px; height: 360px; border-radius: 20px; box-shadow: 2px 5px 5px rgba(0,0,0,0.1); color: #fafafa; overflow: hidden; transition: all .5s;}
+.portfolio-card>a>img{width: 100%; height: 100%; object-fit: cover;}
+.portfolio-card .portfolio-title{width: 100%; height: 100%;}
+.portfolio-card .comingsoon{font-size: 50px; font-weight: 900; letter-spacing: -1px; word-spacing: -6px;}
+
+.portfolio-card.portfolio1{z-index: 3; transform: rotate(-15deg); transform-origin: right;}
+.portfolio-card.portfolio2{z-index: 2; padding: 50px 20px; background: linear-gradient(-225deg ,#e3fdf5,#ffe6fa);}
+.portfolio-card.portfolio2 .todo-title{color: #444; text-align: left; font-size: 20px; font-weight: bold;}
+.portfolio-card.portfolio2 .todoinput{position: absolute; left: 48px; top: 100px; display:flex; align-items: center; width: 250px; height: 50px; padding-left: 20px; border-radius: 50px; background-color: rgba(255,255,255,0.9); color: #ccc; font-weight: 100;}
+.portfolio-card.portfolio3{z-index: 1; background-color: #34364a; transform: rotate(15deg); transform-origin: left; }
+
+.portfolio-card.portfolio2:hover{z-index: 3;}
+
+#contact {display: flex; justify-content: center; align-items: center;}
+#contact .mail-address{z-index: 1; position: relative; display: flex; justify-content: center; align-items: center; font-size: 5vw; font-weight: 900; transition: .5s;}
+.hover-effect-circle{z-index: -1; position: absolute; width: 0; height: 0; border: 1px solid #f09e32; border-radius: 50%; opacity: 0; transition: all .7s;}
+#contact .mail-address:hover{color: #f8b039;}
+.mail-address:hover .hover-effect-circle{width: 300px; height: 300px; opacity: 1;}
+
+footer{display: flex; justify-content: center; align-items: center; width: 100%; height: 70px; border-top: 1px solid rgba(0,0,0,0.1);}

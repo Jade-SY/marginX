@@ -1,15 +1,15 @@
     function scrollAction() {
-        var scrollVal = document.documentElement.scrollTop
+        const scrollVal = document.documentElement.scrollTop
         headerScrollAction(scrollVal)
-        fadeInOut(scrollVal)
-        skillSectionScrollAction(scrollVal)
-        portfolioSectionScrollAction(scrollVal)
-        // console.log(this.scrollY)
+        fadeInOutGreeting(scrollVal)
+        fadeInOutAbout(scrollVal)
+        fadeInOutPortfolio(scrollVal)
+        console.log(this.scrollY)
     }
 
     function headerScrollAction(scrollVal) {
-        var header = document.querySelector('.header')
-        var mainLogo = document.querySelector('.main-logo')
+        const header = document.querySelector('.header')
+        const mainLogo = document.querySelector('.main-logo')
 
         if (scrollVal > 50) {
             mainLogo.classList.add('sm');
@@ -20,39 +20,37 @@
         };
     }
 
-    function fadeInOut(scrollVal) {
-        var greetingText1 = document.querySelector('#hero .greeting-text')
-        var about = document.querySelector("#about")
-
-        if (scrollVal > 900) {
-            about.style.opacity = '1'
-        }
+    function fadeInOutGreeting(scrollVal) {
+        const greetingTxt = document.querySelector('.greeting-text')
+      
         if (scrollVal > 940 && scrollVal < 1571) {
-            greetingText1.style.opacity = '0'
+            greetingTxt.style.opacity = '0'
         } else {
-            greetingText1.style.opacity = '1'
+            greetingTxt.style.opacity = '1'
         }
     }
 
-    function skillSectionScrollAction(scrollVal) {
-        var skillCss = document.querySelector('.skill-css')
-        var skillHtml = document.querySelector('.skill-html')
-        var skillJs = document.querySelector('.skill-js')
-        var skillVue = document.querySelector('.skill-vue')
-
-        if (scrollVal > 3236 && scrollVal < 4540) {
-            skillCss.style.top = -1070 + Math.floor(scrollVal * 0.4) + 'px'
-            skillHtml.style.bottom = -1290 + Math.floor(scrollVal * 0.5) + 'px'
-            skillJs.style.top = Math.floor(scrollVal * 0.06) + 'px'
-            skillVue.style.top = Math.floor(scrollVal * 0.13) + 'px'
-        }
+    function fadeInOutAbout(scrollVal){
+      const aboutTxt = document.querySelector(".about-text-box")
+      console.log(about.offsetTop)
+      if (scrollVal > 900) {
+          aboutTxt.style = 'transform: translateY(0); opacity: 1;'
+        }else{
+          aboutTxt.style = 'transform: translateY(100px); opacity: 0;' 
+      }
     }
 
-    function portfolioSectionScrollAction(scrollVal) {
-        var portfolioTitle = document.querySelector('.portfolio-title')
+    function fadeInOutPortfolio(scrollVal) {
+      const portfolio = document.querySelector('#portfolio')
 
-        if (scrollVal > 5036 && scrollVal < 5900) {
-            portfolioTitle.style.top = -3526 + Math.floor(scrollVal * 0.7) + 'px'
-        }
-    }
+      const trigger = portfolio.offsetTop - (portfolio.clientHeight / 2)
+      const portfolioTxt = document.querySelector('.portfolio-text')
+    console.log(portfolio.clientHeight)
+      if (scrollVal > trigger ) {
+        portfolioTxt.style.opacity = '1'
+      } else {
+        portfolioTxt.style.opacity = '0'
+      }
+  }
+
     window.addEventListener('scroll', scrollAction)
